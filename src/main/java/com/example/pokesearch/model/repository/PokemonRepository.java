@@ -8,11 +8,11 @@ import com.example.pokesearch.model.entity.Pokemon;
 
 public interface PokemonRepository extends JpaRepository<Pokemon, Long> {
 	
-	List<Pokemon> findByName(String name);
+	List<Pokemon> findAllByNameLikeIgnoreCase(String name);
 	
-	List<Pokemon> findByType1(String type1);
+	List<Pokemon> findAllByType1LikeIgnoreCase(String type1);
 	
-	List<Pokemon> findByGeneration(int generation);
+	List<Pokemon> findAllByGeneration(int generation);
 	
-	List<Pokemon> findByLegendary(boolean legendary);
+	List<Pokemon> findAllByLegendary(boolean legendary);
 }
