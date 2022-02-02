@@ -20,14 +20,14 @@ public class PokemonController {
 	@Autowired
     private PokemonRepository pokemonRepository;
 	
-	@GetMapping("/find/{filtro}/{value}")
-    public List<Pokemon> findByFiltro(@PathVariable("filtro") PokeFilter filtro,
+	@GetMapping("/find/{filter}/{value}")
+    public List<Pokemon> findByFiltro(@PathVariable("filter") PokeFilter filter,
     								@PathVariable("value") String value) {
 	    
     	
     	List<Pokemon> pokemons = new ArrayList<Pokemon>();
     	
-    	switch(filtro) {
+    	switch(filter) {
     		case NAME:
     			pokemons = pokemonRepository.findAllByNameLikeIgnoreCase("%"+value+"%");
     			break;
